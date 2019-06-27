@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+$username = "root";
+$password = "";
+$dbname = "exam";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // prepare and bind
-$stmt = $conn->prepare("INSERT INTO account ($email, $name, $mobile, $pass)  VALUES (?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO account (email, name, mobile, pass)  VALUES (?, ?, ?, ?)");
 $stmt->bind_param("sss", $email, $name, $mobile, $pass);
 
 // set parameters and execute
