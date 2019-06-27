@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "exam";
+$dbname = "resell";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 // prepare and bind
 $stmt = $conn->prepare("INSERT INTO account (email, name, mobile, pass)  VALUES (?, ?, ?, ?)");
-$stmt->bind_param("sss", $email, $name, $mobile, $pass);
+$stmt->bind_param("ssss", $email, $name, $mobile, $pass);
 
 // set parameters and execute
 $email = "john1@example.com";
