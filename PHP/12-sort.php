@@ -1,4 +1,3 @@
-Result Size: 753 x 573
 <!DOCTYPE html>
 <html>
 <body>
