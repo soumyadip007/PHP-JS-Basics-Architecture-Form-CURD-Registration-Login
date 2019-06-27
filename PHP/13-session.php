@@ -12,10 +12,10 @@ $_SESSION["favcolor"] = "green";
 $_SESSION["favanimal"] = "cat";
 echo "Session variables are set.<br>";
 echo $_SESSION['favcolor']."<br>";
-
+ 
 echo $_SESSION['favanimal']."<br>";
- header('Location: 1-hello.php');
-   exit();
+  //header('Location: 13-session-II.php');
+ // exit();
 // echo "<script>location.href='hello.php';</script>";
 ?>
 
