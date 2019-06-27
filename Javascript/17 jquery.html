@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("p").css("background-color","red");
+	
+	$('#hide').click(function()
+			{
+				$('p').hide(1500);
+			});	
+	
+$('#show').click(function() {
+		
+		$('p').show(1000);
+	});
+$("#toggle").click(function()
+		{
+	   $("p").toggle(500);
+	
+		});
+$("#fadein").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+});
+$("#fadeout").click(function(){
+    $("#div1").fadeOut();
+    $("#div2").fadeOut("slow");
+    $("#div3").fadeOut(3000);
+});
+$("#fadetoggle").click(function(){  
+ $("#div1").fadeToggle();  
+ $("#div2").fadeToggle("slow");  
+ $("#div3").fadeToggle(3000);  
+}); 
+	
+$("#flip").click(function(){  
+    $("#panel").slideDown("slow");  
+}); 
+$("#flip1").click(function(){  
+    $("#panel").slideUp("slow");  
+});
+$("#flip2").click(function(){  
+    $("#panel").slideToggle("slow");  
+}); 
+
+$("#change").click(function(){  
+    $("p").html("Hello <b>hello java</b>");  
+    
+}); 
+	
+});
+
+</script>
+
+<style type="text/css">
+#panel, #flip,#flip1,#flip2{  
+    padding: 5px;  
+    text-align: center;  
+    background-color: #00FFFF;  
+    border: solid 1px #c3c3c3;  
+}  
+#panel {  
+    padding: 50px;  
+    display: none;  
+}  
+</style>
+</head>
+<body>
+ 
+<p>This is jquery example</p>
+<p>This is html</p>
+<p>The first paragraph is selected.</p>  
+<p>The second paragraph is selected.</p>  
+<p>The third paragraph is selected.</p>  
+<button id="hide">Hide</button>  
+<button id="show">Show</button>
+<button id="toggle">Toggle</button>
+
+<button id="fadein">Click to fade in boxes</button><br><br>  
+<button id="fadeout">Click to fade out boxes</button><br><br>  
+<button id="fadetoggle">Click to fade toggle boxes</button><br><br> 
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>  
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>  
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>  
+
+<div id="flip">Click to slide down panel</div>
+<div id="flip1">Click to slide up panel</div>  
+<div id="flip2">Click to slide toggle panel</div> 
+<div id="panel">Hello webtek</div>
+<button id="change">Click here to change the content of all p elements</button>  
+<p>This is a paragraph.</p>  
+<p>This is another paragraph.</p> 
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 align="center">Validation</h1>
+<table align="center">
+<tr>
+<td>1st element</td>
+<td><input type="text" id="n1"  ></td>
+</tr>
+<tr>
+<td>2nd element</td>
+<td><input type="text" id="n2"  ></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="button" value="add" onclick="sum()" ></td>
+</tr>
+<tr>
+<td><label id="n3"></label></td>
+</tr>
+<tr>
+<td>Name</td>
+<td><input type="text" onblur="validateFirstName(this)"></td>
+<td><label id="firstname"></label></td>
+</tr>
+<tr>
+<td>contact</td>
+<td><input type="text"  onblur="validateContact(this)"></td>
+<td><label id="contact"></label>
+</tr>
+<tr>
+<td>email</td>
+<td><input type="text" onblur="validateEmail(this)"></td>
+<td><label id="email"></label>
+</tr>
+<tr>
+<td>password</td>
+<td><input type="text" onblur="validatePasswordRuleSet(this)"></td>
+<td><label id="password">Must contain 8 character and upper and lower case and special character</label></td>
+</tr>
+<tr>
+<td>Confirm password</td>
+<td><input type="text"   onblur="validatepassword(this)"></td>
+<td><label id="cpassword"></label></td>
+</tr>
+</table>
+
+
+
+
+<script type="text/javascript">
+var pass;
+function sum()
+{
+	var a,b,c;
+	a=parseInt(document.getElementById("n1").value);
+	b=parseInt(document.getElementById("n2").value);
+	c=a+b;
+	//document.writeln("the sum is"+c);
+	document.getElementById("n3").innerHTML=c;
+}
+function validateFirstName(obj)
+{
+    var name=obj.value;
+    
+    var check=0;
+    for(var i=0;i<name.length;i++)
+    {
+        if((name.charCodeAt(i)>=65 && name.charCodeAt(i)<=90) ||
+          (name.charCodeAt(i)>=97 && name.charCodeAt(i)<=122))
+        {
+            check++;
+        }
+    }
+    if(check==name.length){
+        document.getElementById("firstname").innerHTML="";
+       
+    }else{
+        document.getElementById("firstname").innerHTML="Name should contain only alphabates";
+        document.getElementById("firstname").style.color="red";
+    }
+   
+}
+function validateEmail(obj){
+    var email=obj.value;
+    var postionOfAtTheRate= email.indexOf("@");
+    var postionOfDot= email.lastIndexOf(".");
+   if(postionOfAtTheRate<2 || postionOfAtTheRate+2>email.length ||
+		   postionOfDot+2>email.length ||
+           postionOfAtTheRate<0 || postionOfDot<1||
+           postionOfDot<postionOfAtTheRate){
+       document.getElementById("email").innerHTML="Invalid email ID ! Please insert a valid one";
+       document.getElementById("email").style.color="red";
+     
+   }
+   else{
+       document.getElementById("email").innerHTML="";
+       
+   }
+}
+function validateContact(obj){
+    var contact=obj.value;
+    var len=contact.length;
+    var check=0;
+    	for(var i=0;i<len;i++)
+    		{
+    if(contact.charCodeAt(i)>=48 && contact.charCodeAt(i)<=57)
+    			  {
+    			  check++;
+    			  }
+    		}
+ if(len==check && len==10)
+    		{
+    		 document.getElementById("contact").innerHTML="";
+    		}
+    else{
+         document.getElementById("contact").innerHTML="Contact should be of 10 Digits ";
+         document.getElementById("contact").style.color="red";
+    }
+}
+
+function validatePasswordRuleSet(obj){
+    var password= obj.value;
+    var cu=0;
+    var cl=0;
+    var cs=0;
+    var symbols="@#$%^&*!";
+    for(var i=0;i<password.length;i++){
+ if(password.charCodeAt(i)>=65 && password.charCodeAt(i)<=90 )
+            cu++;
+        
+ if(password.charCodeAt(i)>=97 && password.charCodeAt(i)<=122)
+            cl++;
+        
+  if(symbols.indexOf(password.charAt(i))!=-1)
+            cs++;
+    }
+   if(cu>0 && cl>0 &&
+		   cs>0 
+		   && password.length>=8)
+   {
+        document.getElementById("password").innerHTML="Password match the rule set";
+        document.getElementById("password").style.color="green";
+        pass=password;
+    }
+    else{
+ document.getElementById("password").innerHTML="Must contain upper and lower case and special character \
+                            (@,#,-,_,.,&)";
+document.getElementById("password").style.color="red";
+    }
+
+}
+
+function validatepassword(obj)
+{
+	   var cpass=obj.value;
+	   if(pass==cpass && pass!=null && pass!="")
+		   {
+document.getElementById("cpassword").innerHTML="Password confrim";
+   document.getElementById("cpassword").style.color="green";
+		   }
+	   else
+		   {
+  document.getElementById("cpassword").innerHTML="Password not confirm";
+  document.getElementById("cpassword").style.color="green";
+		   }   
+}
+</script>
+</body>
+</html>

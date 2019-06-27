@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+      
+        <style>
+            body{
+                width:auto; 
+            }
+           
+            table{
+                border:2px solid red;
+                background-color:darkkhaki;
+                
+                
+             
+        </style>
+        <script type="text/javascript">
+function captcha()
+{
+ var alpha=new Array('A','B','C','D','E','F',
+'G','H','I','J','K','L','M','N','O','N',
+'P','Q','R','S','T','U','V','W','X','Y','Z');
+                
+   var a=alpha[Math.floor(Math.random()*alpha.length)];
+   var b=alpha[Math.floor(Math.random()*alpha.length)];
+   var c=alpha[Math.floor(Math.random()*alpha.length)];
+   var d=alpha[Math.floor(Math.random()*alpha.length)];
+   var e=alpha[Math.floor(Math.random()*alpha.length)];
+   var f=alpha[Math.floor(Math.random()*alpha.length)];
+                
+   var code=a+" "+b+c+d+e+f;
+     document.getElementById("textname").value=code;
+ }
+        
+   function validcaptcha()
+      {
+        var string1=removespace(document.getElementById
+	("textname").value);
+       var string2=removespace(document.getElementById
+	("textname1").value);
+      if(string1==string2)
+          {
+    	      alert("match found");
+          }
+          else
+          {
+        	  alert("U ARE A ROBOT");
+          }
+                
+  }
+            function removespace(string)
+            {
+                return string.split(' ').join('');
+            }
+            
+        </script>
+    </head>
+    <body onload="captcha()" >
+         <CENTER>
+        <h1>
+            CAPTCHA TEST
+        </h1>
+        <table>      
+   <th colspan="2">captcha</th>
+   <tr>
+   <td><input type="text" id="textname" disabled="true"> </td>
+					
+   <td><input type="button" value="refresh"
+   onclick="captcha()" style="color: blue"></td>
+                    
+   </tr>
+   <tr>
+   <td><input type="text" id="textname1" ></td>
+  <td><input type="button"  value="check" 
+  onclick="validcaptcha()" 	style="color: blue"></td>
+                    
+   </tr>
+          
+        </table>
+    </CENTER>
+    </body>
+</html>
