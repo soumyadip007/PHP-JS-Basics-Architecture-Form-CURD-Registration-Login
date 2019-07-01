@@ -8,7 +8,7 @@ $y = 4;
 echo $x + $y;
 
 $txt = "Web Dev Training";
-echo "I love " . $txt . "!";
+echo "<br>I love " . $txt . "!";
 ?>
 
 </body>
