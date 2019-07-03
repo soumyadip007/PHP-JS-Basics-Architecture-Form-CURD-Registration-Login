@@ -3,7 +3,7 @@
 <body>
 
 <?php
-$t = 12;
+$t = 120;
 echo "<p>The hour (of the server) is " . $t; 
 echo ", and will give the following message:</p>";
 

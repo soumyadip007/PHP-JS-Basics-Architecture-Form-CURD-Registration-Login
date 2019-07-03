@@ -12,7 +12,7 @@ if (!$conn) {
 }
 
 $sql = "INSERT INTO account (email, name,mobile, pass)
-VALUES ('John@gmail.com', 'John', '7687028083', 'password')";
+VALUES ('anand@gmail.com', 'John', '7687028083', 'password')";
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";

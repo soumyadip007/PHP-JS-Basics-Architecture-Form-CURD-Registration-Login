@@ -17,7 +17,7 @@ $stmt = $conn->prepare("INSERT INTO account (email, name, mobile, pass)  VALUES 
 $stmt->bind_param("ssss", $email, $name, $mobile, $pass);
 
 // set parameters and execute
-$email = "john1@example.com";
+$email = "john11233@example.com";
 $name = "John Dao";
 $mobile = "768702803";
 $pass = "pass";
